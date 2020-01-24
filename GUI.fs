@@ -9,24 +9,28 @@ type Action = Name
 type Transition = { OldState: State; Event: Event; NewState: State; Actions: Action list }
 type Header = Header of Name * Name
 
-// all is async
-let create_gui () =
-  ()
+// view to model
+let create_gui () = async {return ()}
 
 // model to view
-// async
 let win (player: bool) =
     if player = false
     then MessageBox.Show("You have won")
     else MessageBox.Show("You have lost")
 
-// async
-let get_configuration(): List<int> * int = List.Empty, 0
+// controller to model
+let get_configuration(): List<int> * int =
+    let result = async { return [2;3;6], 0 }
+
+    result
+    |> Async.RunSynchronously // replace by UI bindings
 
 // model to view
-// async
-let update(board: List<int>) = 0
+let update(board: List<int>) = async {return ()}
 
 // controller to model
-// async
-let play(board: List<int>): List<int> = List.Empty
+let play(board: List<int>): List<int> =
+    let result = async { return List.Empty }
+    
+    result
+    |> Async.RunSynchronously // replace by UI bindings

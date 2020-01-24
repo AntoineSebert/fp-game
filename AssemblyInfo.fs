@@ -12,7 +12,7 @@ open System.Runtime.InteropServices
 [<assembly: AssemblyConfiguration("")>]
 [<assembly: AssemblyCompany("Group 4")>]
 [<assembly: AssemblyProduct("FPGame")>]
-[<assembly: AssemblyCopyright("Copyright © Jesper Lund Petersen & Antoine Sébert 2020")>]
+[<assembly: AssemblyCopyright("Copyright © 2020 Jesper Lund Petersen & Antoine Sébert")>]
 [<assembly: AssemblyTrademark("")>]
 [<assembly: AssemblyCulture("")>]
 

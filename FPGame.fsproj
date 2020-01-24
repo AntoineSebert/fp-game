@@ -47,18 +47,15 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
-    <Compile Include="MainViewModel.fs" />
     <Resource Include="GameResources.xaml" />
-    <Resource Include="ErrorView.xaml" />
-    <Resource Include="MainView.xaml" />
-    <Compile Include="MainView.xaml.fs" />
-    <Resource Include="MainWindow.xaml" />
     <Compile Include="MainWindow.xaml.fs" />
+    <Compile Include="MainViewModel.fs" />
+    <Resource Include="MainWindow.xaml" />
     <Compile Include="GUI.fs" />
     <Resource Include="Game.xaml" />
-    <Compile Include="Game.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
+    <Compile Include="Game.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UIAutomationTypes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
