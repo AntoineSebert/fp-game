@@ -1,9 +1,7 @@
-namespace FPGame
+﻿namespace Views
 
 open FsXaml
 open System.Windows.Automation
-
-type MainWindow = XAML<"MainWindow.xaml">
 
 // Demonstrates technique for adding "code behind" logic
 // Use a different name for the base class, then inherit to add code behind

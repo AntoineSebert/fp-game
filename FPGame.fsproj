@@ -22,7 +22,7 @@
     <Tailcalls>false</Tailcalls>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <WarningLevel>3</WarningLevel>
+    <WarningLevel>5</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\$(Configuration)\$(AssemblyName).XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
@@ -47,16 +47,32 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="MainViewModel.fs" />
+    <Resource Include="GameResources.xaml" />
+    <Resource Include="ErrorView.xaml" />
+    <Resource Include="MainView.xaml" />
+    <Compile Include="MainView.xaml.fs" />
+    <Resource Include="MainWindow.xaml" />
     <Compile Include="MainWindow.xaml.fs" />
+    <Compile Include="GUI.fs" />
+    <Resource Include="Game.xaml" />
+    <Compile Include="Game.fs" />
     <None Include="App.config" />
     <Content Include="packages.config" />
-    <Resource Include="Game.xaml" />
-    <Resource Include="MainWindow.xaml" />
-    <Compile Include="Game.fs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="UIAutomationTypes, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Castle.Core">
+      <HintPath>packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
     <Reference Include="FSharp.Core">
       <HintPath>packages\FSharp.Core.4.7.0\lib\net45\FSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.Desktop.UI">
+      <HintPath>packages\FSharp.Desktop.UI.0.7.1\lib\net45\FSharp.Desktop.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="FSharp.ViewModule">
+      <HintPath>packages\FSharp.ViewModule.Core.1.0.7.0\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\FSharp.ViewModule.dll</HintPath>
     </Reference>
     <Reference Include="FsXaml.Wpf">
       <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.dll</HintPath>
@@ -64,12 +80,31 @@
     <Reference Include="FsXaml.Wpf.TypeProvider">
       <HintPath>packages\FsXaml.Wpf.3.1.6\lib\net45\FsXaml.Wpf.TypeProvider.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Reactive.Core">
+      <HintPath>packages\Rx-Core.2.2.5\lib\net45\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces">
+      <HintPath>packages\Rx-Interfaces.2.2.5\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq">
+      <HintPath>packages\Rx-Linq.2.2.5\lib\net45\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices">
+      <HintPath>packages\Rx-PlatformServices.2.2.5\lib\net45\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />

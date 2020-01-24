@@ -2,13 +2,97 @@
 
 <Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Views;assembly=FPGame"
     xmlns:fsxaml="http://github.com/fsprojects/FsXaml"
-    Title="F# Windows App" Height="300" Width="400">
+    xmlns:local="clr-namespace:ViewModels;assembly=FPGame"
+    xmlns:views="clr-namespace:Views;assembly=FPGame"
+    Title="⚡️ Nim - Group 4" Height="800" Width="1200">
+    <Window.Resources>
+        <fsxaml:BooleanToCollapsedConverter x:Key="TrueToCollapsed" />
+    </Window.Resources>
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
 
     <Grid>
-        <TextBlock Text="Hello F# from WPF!"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center" />
+        <Rectangle HorizontalAlignment="Left" Height="769" VerticalAlignment="Top" Width="1192">
+            <Rectangle.Fill>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#cd4dcc" Offset="0.0" />
+                    <GradientStop Color="#4a69bb" Offset="1.0" />
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Canvas HorizontalAlignment="Left" Height="749" Margin="186,10,0,0" VerticalAlignment="Top" Width="996" x:Name="canvas"></Canvas>
+        <ListView Background="#434343" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="128" Height="749">
+            <Label Foreground="#8097d1" Content="FP Nim" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="24px"/>
+            <TextBlock
+                Foreground="#8097d1"
+                HorizontalAlignment="Left"
+                TextWrapping="Wrap"
+                Text="Heaps"
+                Margin="0 20 0 0"
+                VerticalAlignment="Top"/>
+            <ComboBox
+                SelectedValue="{Binding Heaps}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Width="108"
+                x:Name="heaps"
+                Foreground="#4a69bb">
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">3</ComboBoxItem>
+                <ComboBoxItem>4</ComboBoxItem>
+                <ComboBoxItem>5</ComboBoxItem>
+                <ComboBoxItem>6</ComboBoxItem>
+            </ComboBox>
+            <TextBlock
+                Foreground="#8097d1"
+                HorizontalAlignment="Left"
+                TextWrapping="Wrap"
+                Text="Matches"
+                VerticalAlignment="Top"
+                Margin="0 20 0 0"/>
+            <ComboBox
+                SelectedValue="{Binding Matches}"
+                Foreground="#4a69bb"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Width="108"
+                x:Name="matches">
+                <ComboBoxItem>2</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">5</ComboBoxItem>
+                <ComboBoxItem>10</ComboBoxItem>
+                <ComboBoxItem>15</ComboBoxItem>
+            </ComboBox>
+            <TextBlock
+                Foreground="#8097d1"
+                HorizontalAlignment="Left"
+                TextWrapping="Wrap"
+                Text="Difficulty"
+                VerticalAlignment="Top"
+                Margin="0 20 0 0"/>
+            <ComboBox
+                SelectedValue="{Binding Difficulty}"
+                Foreground="#4a69bb"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                Width="108"
+                x:Name="difficulty">
+                <ComboBoxItem>Easy</ComboBoxItem>
+                <ComboBoxItem IsSelected="True">Normal</ComboBoxItem>
+                <ComboBoxItem>Hard</ComboBoxItem>
+            </ComboBox>
+            <Button
+                Margin="0 100 0 0"
+                Foreground="#4a69bb"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"
+                Width="108"
+                x:Name="launcher"
+                Command="{Binding PlayCommand}">
+                <!--CommandParameter="{Binding Heaps}"-->
+                Content="Play">
+            </Button>
+        </ListView>
     </Grid>
 </Window>
